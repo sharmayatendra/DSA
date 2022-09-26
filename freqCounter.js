@@ -103,3 +103,28 @@ const validAnagram = (str1, str2) => {
 };
 
 console.log(validAnagram("care", "race"));
+
+// 2nd approach
+
+const validAnagram2 = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  const freq = {};
+
+  for (let val of str1) {
+    freq[val] ? (freq[val] += 1) : (freq[val] = 1);
+  }
+
+  for (let val of str2) {
+    if (!freq[val]) {
+      return false;
+    } else {
+      freq[val]--;
+    }
+  }
+  return true;
+};
+
+console.log(validAnagram2("anagram", "nagaram"));
