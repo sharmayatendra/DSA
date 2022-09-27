@@ -32,3 +32,44 @@ const isZero1 = (arr) => {
 };
 
 console.log(isZero1([-4, -3, -2, -1, 1, 2, 3, 5]));
+
+// implement a function which accepts a sorted array & count the unique values in the array. there can be negative numbers in the array but it will always be sorted.
+
+const countUniqueValues = (arr) => {
+  let changeTracker = 0;
+  let firstPointer = 0;
+  let secondPointer = 1;
+  if (arr.length === 0) {
+    return 0;
+  }
+  while (secondPointer !== arr.length - 1) {
+    if (arr[secondPointer] !== arr[firstPointer]) {
+      changeTracker++;
+      console.log(changeTracker);
+      firstPointer++;
+      secondPointer++;
+    } else {
+      firstPointer++;
+      secondPointer++;
+    }
+  }
+  return changeTracker + 2;
+};
+
+console.log(countUniqueValues([1, 1, 1, 1, 1, 2]));
+
+// 2nd approach:
+
+const countUniqueValues2 = (arr) => {
+  if (arr.length < 2) {
+    return arr.length;
+  }
+  let i = 0;
+  let j = 1;
+  while (j < arr.length) {
+    arr[i] === arr[j] ? j++ : (arr[++i] = arr[j]);
+  }
+  return i + 1;
+};
+
+console.log(countUniqueValues2([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
