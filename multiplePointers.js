@@ -73,3 +73,23 @@ const countUniqueValues2 = (arr) => {
 };
 
 console.log(countUniqueValues2([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
+
+// removeDuplicates:
+
+const removeDuplicates = (arr) => {
+  if (arr.length < 2) {
+    return arr;
+  }
+  let i = 0;
+  let arr1 = [];
+  let j = 1;
+  while (j < arr.length) {
+    arr[i] === arr[j] ? j++ : (arr[++i] = arr[j]);
+  }
+  for (let x = 0; x <= i; x++) {
+    arr1.push(arr[x]);
+  }
+  return arr1;
+};
+
+console.log(removeDuplicates([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
