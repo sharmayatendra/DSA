@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\challenges\\capitalizeFirst.js"
+            "program": "${workspaceFolder}\\challenges\\collectStrings.js"
         }
     ]
 }

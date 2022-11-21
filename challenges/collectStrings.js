@@ -8,7 +8,7 @@ const collectStrings = (obj) => {
     if (typeof obj[key] === "string") {
       newArr.push(obj[key]);
     } else {
-      collectStrings(obj[key]);
+      newArr = newArr.concat(collectStrings(obj[key]));
     }
   }
   return newArr;
@@ -22,6 +22,7 @@ console.log(
 
 // const obj = {
 //   stuff: "foo",
+//   num1: 4,
 //   data: {
 //     val: {
 //       thing: {
@@ -42,7 +43,7 @@ console.log(
 
 //   for (const key of arr) {
 //     if (typeof obj[key] === "object") {
-//       result = result.concat(collectStrings(obj[key]));
+//       result = result.concat(collectStrings2(obj[key]));
 //     } else if (typeof obj[key] === "string") {
 //       result.push(obj[key]);
 //     }
