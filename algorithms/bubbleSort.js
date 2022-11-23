@@ -41,14 +41,20 @@ console.log(bubbleSort1([19, 10, 24]));
 // more optimized approach:
 
 const bubbleSort2 = (arr) => {
+  let noSwap;
   for (let i = arr.length - 1; i >= 0; i--) {
+    noSwap = true;
     for (let j = 0; j <= i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         let temp = arr[j]; // temp = 59
         arr[j] = arr[j + 1]; // arr[1] = 21
         arr[j + 1] = temp; // arr[2] = 59
+        noSwap = false;
       }
     }
+    if (noSwap) break;
   }
   return arr;
 };
+
+console.log(bubbleSort2([8, 1, 2, 3, 4, 5, 6]));
