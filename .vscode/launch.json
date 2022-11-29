@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\algorithms\\quickSort.js"
+            "program": "${workspaceFolder}\\leetcode\\medium\\minSubArrLen.js"
         }
     ]
 }

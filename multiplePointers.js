@@ -92,4 +92,4 @@ const removeDuplicates = (arr) => {
   return arr1;
 };
 
-console.log(removeDuplicates([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
+console.log(removeDuplicates([5, 5, 7, 7, 7, 1, 2, 88, 88]));
