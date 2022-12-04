@@ -20,7 +20,7 @@ let firstPerson = new Student("foo", "bar");
 console.log(firstPerson.firstName);
 console.log(firstPerson);
 
-// instance method: used to create method on every instances of class.
+// instance method: used to create method on every instances of class & it works on the individual level.
 console.log(firstPerson.getFullName());
 
 // static method: they are not created on each instance but on the main Object created using the class
