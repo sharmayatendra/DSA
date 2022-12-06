@@ -6,7 +6,7 @@ class Node {
   }
 }
 
-// inserting the new value to the specified index of a doublylinkedList
+// removing the node at the specified index of a doublylinkedList
 
 class DoublyLinkedList {
   constructor() {
