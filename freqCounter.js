@@ -107,17 +107,21 @@ console.log(validAnagram("care", "race"));
 // 2nd approach
 
 const validAnagram2 = (str1, str2) => {
-  if (str1.length !== str2.length) {
+  const trimStr1 = str1.trim();
+  const trimStr2 = str2.trim();
+  if (trimStr1.length !== trimStr2.length) {
     return false;
   }
 
+  console.log(trimStr1);
+
   const freq = {};
 
-  for (let val of str1) {
+  for (let val of trimStr1) {
     freq[val] ? (freq[val] += 1) : (freq[val] = 1);
   }
-
-  for (let val of str2) {
+  console.log(freq);
+  for (let val of trimStr2) {
     if (!freq[val]) {
       return false;
     } else {
@@ -127,4 +131,39 @@ const validAnagram2 = (str1, str2) => {
   return true;
 };
 
-console.log(validAnagram2("anagram", "nagaram"));
+console.log(validAnagram2("anagram ", "nagaram   "));
+
+const validAnagram3 = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  // console.log(trimStr1);
+
+  const freq = {};
+
+  for (let i = 0; i < str1.length; i++) {
+    if (str1[i] === " ") continue;
+    freq[str1[i]] ? (freq[str1[i]] += 1) : (freq[str1[i]] = 1);
+  }
+  // for (let val of str1) {
+  //   freq[val] ? (freq[val] += 1) : (freq[val] = 1);
+  // }
+  console.log(freq);
+  for (let j = 0; j < str2.length; j++) {
+    if (str2[j] === " ") continue;
+    if (!freq[str2[j]]) return false;
+    else freq[str2[j]]--;
+  }
+
+  // for (let val of str2) {
+  //   if (!freq[val]) {
+  //     return false;
+  //   } else {
+  //     freq[val]--;
+  //   }
+  // }
+  return true;
+};
+
+console.log(validAnagram3("   anagram  ", "nagaram   "));
