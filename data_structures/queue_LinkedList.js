@@ -35,3 +35,5 @@ class Queue {
     return temp.val;
   }
 }
+
+// time complexity : insertion , removel = O(1) , searching, accessing = O(n)
