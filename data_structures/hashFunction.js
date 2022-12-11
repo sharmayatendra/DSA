@@ -22,3 +22,7 @@ const hash = (key, arrLength) => {
   }
   return total;
 };
+
+/* to avoid collision two main methods are: separate chaining , linear probing.
+1 - Separate Chaining: in this we took the slot and fill the two or more data into another nested data structure at same place.
+2 - Linear Probing: we fix a single item a given slot then if collision occurs we assign it to next empty slot.*/
