@@ -80,3 +80,5 @@ class PriorityQueue {
 }
 
 let ER = new PriorityQueue();
+
+// time complexity: insertion - O(logn) , removal: O(logn) , searching: O(n)
