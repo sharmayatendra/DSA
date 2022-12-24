@@ -6,4 +6,18 @@ Input: nums = [1,2,3,1,2,3], k = 2
 Output: false
  */
 
-const containsNearByDuplicate = () => {};
+const containsNearByDuplicate = (nums, k) => {
+  let i = 0;
+  let j = nums.length - 1;
+  //   console.log("entering");
+  while (i !== j) {
+    if (nums[i] === nums[j] && Math.abs(i - j) <= k) return true;
+    if (j === i + 1 && nums[i] !== nums[j]) {
+      i++;
+    }
+    j--;
+  }
+  return false;
+};
+
+console.log(containsNearByDuplicate([1, 2, 3, 1], 2));
